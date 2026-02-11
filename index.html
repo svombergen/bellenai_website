@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bellen.ai — AI Call Agents voor uw bedrijf</title>
+  <meta name="description" content="AI-telefoonagenten voor het MKB. Beantwoord oproepen, boek afspraken en help klanten — 24/7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">bellen<span>.ai</span></a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Uw AI-telefonist. Altijd bereikbaar.</h1>
+      <p class="hero-sub">Slimme telefoonagenten die oproepen beantwoorden, afspraken boeken en klanten helpen — 24/7, in perfect Nederlands.</p>
+    </div>
+  </section>
+
+  <!-- Agents -->
+  <section class="agents" id="agents">
+    <div class="container">
+      <h2>Onze Agents</h2>
+      <div class="agents-grid" id="agents-grid"></div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Eenvoudige Prijzen</h2>
+      <div class="pricing-card">
+        <div class="price-main">
+          <span class="price-amount">€49</span>
+          <span class="price-period">/maand</span>
+        </div>
+        <div class="price-detail">+ €0,25 per gebelde minuut</div>
+        <ul class="price-features">
+          <li>24/7 bereikbaar</li>
+          <li>Perfect Nederlands</li>
+          <li>Eigen telefoonnummer</li>
+          <li>Binnen 1 dag live</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Naam" maxlength="30">
+        <input type="text" name="email" placeholder="E-mail" maxlength="50">
+        <input type="tel" name="phone" placeholder="Telefoonnummer">
+        <textarea name="message" placeholder="Uw bericht (max 300 tekens)" rows="4" maxlength="300"></textarea>
+        <button type="submit" class="btn btn-primary">Verstuur</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 AI Calling BV &middot; <a href="mailto:info@bellen.ai">info@bellen.ai</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
