@@ -5,6 +5,7 @@ const agents = [
     emoji: '👩‍🍳',
     tags: ['Restaurants', 'Reserveringen', 'Menukaart', 'Openingstijden'],
     phone: 'tel:+31XXXXXXXXX',
+    vapiId: '305fed41-a7cb-45d3-822c-98f6fc3f0afb',
     color: ['#2563eb', '#7c3aed']
   },
   {
@@ -12,6 +13,7 @@ const agents = [
     emoji: '🔧',
     tags: ['CV-ketels', 'Storingscodes', 'Onderhoud', 'Troubleshooting'],
     phone: 'tel:+31970102050003',
+    vapiId: 'd86c3987-da7f-4b8d-927e-06ee0e17102d',
     color: ['#059669', '#0891b2']
   },
   {
@@ -19,6 +21,7 @@ const agents = [
     emoji: '🎧',
     tags: ['Klantenservice', 'Support', 'Algemene vragen', 'Help'],
     phone: 'tel:+31970102233315',
+    vapiId: '764a2ff2-b0c3-4ee6-8283-6404b80491f1',
     color: ['#dc2626', '#ea580c']
   }
 ];
@@ -26,18 +29,25 @@ const agents = [
 // === Render Agents ===
 function renderAgents() {
   const grid = document.getElementById('agents-grid');
-  grid.innerHTML = agents.map(agent => `
-    <div class="agent-card">
-      <div class="agent-avatar" style="background: linear-gradient(135deg, ${agent.color[0]}, ${agent.color[1]})">
-        <span>${agent.emoji}</span>
+  const isDesktop = window.innerWidth >= 768; // 768px breakpoint for desktop
+  
+  grid.innerHTML = agents.map(agent => {
+    const demoLink = isDesktop ? `https://vapi.ai/call/${agent.vapiId}` : agent.phone;
+    const linkTarget = isDesktop ? ' target="_blank" rel="noopener"' : '';
+    
+    return `
+      <div class="agent-card">
+        <div class="agent-avatar" style="background: linear-gradient(135deg, ${agent.color[0]}, ${agent.color[1]})">
+          <span>${agent.emoji}</span>
+        </div>
+        <h3 class="agent-name">${agent.name}</h3>
+        <div class="agent-tags">
+          ${agent.tags.map(t => `<span class="agent-tag">${t}</span>`).join('')}
+        </div>
+        <a href="${demoLink}"${linkTarget} class="btn btn-call">BEL DEMO</a>
       </div>
-      <h3 class="agent-name">${agent.name}</h3>
-      <div class="agent-tags">
-        ${agent.tags.map(t => `<span class="agent-tag">${t}</span>`).join('')}
-      </div>
-      <a href="${agent.phone}" class="btn btn-call">BEL DEMO</a>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 // === Contact Form ===
@@ -181,4 +191,11 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
   renderAgents();
   initForm();
+  
+  // Re-render agents on window resize to switch between phone/vapi links
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(renderAgents, 100);
+  });
 });
