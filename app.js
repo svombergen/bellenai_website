@@ -1,7 +1,7 @@
 // === Agent Data ===
 const agents = [
   {
-    name: 'Sophie',
+    name: 'Luna',
     emoji: '👩‍💼',
     tags: ['Restaurants', 'Reserveringen', 'Menukaart', 'Openingstijden'],
     phone: 'tel:+31XXXXXXXXX',
@@ -13,6 +13,13 @@ const agents = [
     tags: ['CV-ketels', 'Storingscodes', 'Onderhoud', 'Troubleshooting'],
     phone: 'tel:+31XXXXXXXXX',
     color: ['#059669', '#0891b2']
+  },
+  {
+    name: 'Sophie',
+    emoji: '👩‍💬',
+    tags: ['Klantenservice', 'Support', 'Algemene vragen', 'Help'],
+    phone: 'tel:+31XXXXXXXXX',
+    color: ['#dc2626', '#ea580c']
   }
 ];
 
