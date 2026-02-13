@@ -190,15 +190,48 @@ body {
   padding: 60px 0;
 }
 
-.pricing-card {
-  max-width: 400px;
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.pricing-card {
   background: var(--card-bg);
-  border: 2px solid var(--accent);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 48px 36px;
+  padding: 36px 28px;
   text-align: center;
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.pricing-featured {
+  border: 2px solid var(--accent);
+  transform: scale(1.02);
+}
+
+.pricing-featured:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.price-tier {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 .price-main {
@@ -314,6 +347,9 @@ body {
   .agents, .pricing, .contact { padding: 40px 0; }
   .agents-grid { grid-template-columns: 1fr; }
   .agent-avatar { width: 100px; height: 100px; font-size: 2.5rem; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
   .pricing-card { padding: 32px 24px; }
+  .pricing-featured { transform: none; }
+  .pricing-featured:hover { transform: translateY(-4px); }
   .price-amount { font-size: 2.8rem; }
 }
