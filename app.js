@@ -2,7 +2,7 @@
 const agents = [
   {
     name: 'Luna',
-    emoji: '👩‍💼',
+    emoji: '👩‍🍳',
     tags: ['Restaurants', 'Reserveringen', 'Menukaart', 'Openingstijden'],
     phone: 'tel:+31XXXXXXXXX',
     color: ['#2563eb', '#7c3aed']
@@ -16,7 +16,7 @@ const agents = [
   },
   {
     name: 'Sophie',
-    emoji: '👩‍💬',
+    emoji: '🎧',
     tags: ['Klantenservice', 'Support', 'Algemene vragen', 'Help'],
     phone: 'tel:+31970102233315',
     color: ['#dc2626', '#ea580c']
