@@ -11,14 +11,14 @@ const agents = [
     name: 'Thomas',
     emoji: '🔧',
     tags: ['CV-ketels', 'Storingscodes', 'Onderhoud', 'Troubleshooting'],
-    phone: 'tel:+31970102050003',
+    phone: 'tel:+3197010205003',
     color: ['#059669', '#0891b2']
   },
   {
     name: 'Sophie',
     emoji: '🎧',
     tags: ['Klantenservice', 'Support', 'Algemene vragen', 'Help'],
-    phone: 'tel:+31970102233315',
+    phone: 'tel:+3197010223315',
     color: ['#dc2626', '#ea580c']
   }
 ];
