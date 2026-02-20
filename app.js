@@ -4,7 +4,7 @@ const agents = [
     name: 'Luna',
     emoji: '👩‍🍳',
     tags: ['Restaurants', 'Reserveringen', 'Menukaart', 'Openingstijden'],
-    phone: 'tel:+31XXXXXXXXX',
+    phone: 'tel:+13166666367',
     color: ['#2563eb', '#7c3aed']
   },
   {
